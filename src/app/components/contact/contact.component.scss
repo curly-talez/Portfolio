@@ -1,0 +1,127 @@
+$bgColor: #b8c79f;
+$innerBgColor: #798a5d;
+$textColor: #fff;
+
+.contact {
+    &__container {
+        background-color: $bgColor;
+        height: 100vh;
+        display: flex;
+        color: $textColor;
+    }
+
+    &__inner-container {
+        width: 75%;
+        height: 600px;
+        background-color: $bgColor;
+        margin: auto;
+    }
+
+    &__text-container {
+        background-color: $innerBgColor;
+        padding: 10%;
+    }
+
+    &__stay-connected {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    &__icon-container {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 40px;
+        border-radius: 7px;
+        box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+
+    &__message {
+        margin-bottom: 20px;
+    }
+
+    &__form-container {
+        min-height: 300px;
+    }
+
+    &__input {
+        width: 100%;
+        border: $textColor 1px solid;
+        margin-bottom: 10px;
+        background-color: $innerBgColor;
+        padding: 8px 12px;
+        color: $textColor;
+        outline: none;
+        border-radius: 5px;
+    }
+
+    &__text-area {
+        width: 100%;
+        background-color: $innerBgColor;
+        border: $textColor 1px solid;
+        padding: 8px 12px;
+        color: $textColor;
+        outline: none;
+        border-radius: 5px;
+    }
+
+    &__button {
+        width: 100%;
+        border-radius: 5px;
+        background-color: $textColor;
+        color: $innerBgColor;
+        height: 35px;
+        cursor: pointer;
+    }
+
+    &__message-sent,
+    &__message-error {
+        height: 300px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+// desktop view
+@media screen and (min-width: 768px) {
+    .contact {
+
+        &__stay-connected {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        &__container {
+            font-size: 20px;
+        }
+
+        &__icon {
+            width: 40px;
+        }
+
+        &__icon-container {
+            width: 200px;
+        }
+
+        &__input,
+        &__text-area,
+        &__button {
+            font-size: 18px;
+        }
+
+        &__button {
+            font-weight: 500;
+        }
+
+    }
+}

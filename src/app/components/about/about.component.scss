@@ -1,0 +1,133 @@
+$aboutBgColor: #8b7886;
+$aboutTextColor: #fff;
+
+.about {
+    &__container {}
+
+    &__bg {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: $aboutTextColor;
+        background-color: $aboutBgColor;
+    }
+
+    &__details-container {
+        width: 80%;
+        margin: 10%;
+    }
+
+    &__image-container {}
+
+    &__image-inner-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        border-radius: 25% 0;
+        border: 10px $aboutTextColor solid;
+        height: 200px;
+        margin-bottom: 30px;
+        transition: 500ms;
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        width: 175px;
+        margin: 0 auto 20px;
+
+        &__icons {
+            height: 35px;
+            border: 5px solid $aboutTextColor;
+            background: $aboutTextColor;
+            border-radius: 10px 0;
+            cursor: pointer;
+            transition: 500ms;
+        }
+    }
+
+    &__text-container {
+        width: 230px;
+        margin: auto;
+        font-size: 18px;
+    }
+
+    &__content {
+        a {
+            color: $aboutTextColor;
+            text-decoration: none;
+        }
+    }
+
+    &__button {
+        color: $aboutTextColor;
+        background-color: $aboutBgColor;
+        border: 1px solid $aboutTextColor;
+        width: 190px;
+        font-size: 15px;
+        padding: 10px 20px;
+        margin: 25px 0;
+        border-radius: 20px 0;
+        transition: 500ms;
+    }
+
+}
+
+// for desktop
+@media screen and (min-width:768px) {
+    .about {
+        &__details-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__image {
+            height: 300px;
+        }
+
+        &__image:hover {
+            border-radius: 25%;
+            transition: 500ms;
+        }
+
+        &__social {
+            width: 250px;
+
+            &__icons {
+                height: 50px;
+                border-radius: 20px 0;
+            }
+
+            &__icons:hover {
+                border-radius: 10px;
+                transition: 500ms;
+            }
+        }
+
+        &__text-container {
+            margin: 50px;
+            font-size: 20px;
+            width: 250px;
+            line-height: 2;
+        }
+
+        &__button {
+            min-height: 50px;
+        }
+
+        &__button:hover {
+            color: $aboutBgColor;
+            background-color: $aboutTextColor;
+            font-weight: 600;
+            font-size: 18px;
+            min-height: 50px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 500ms;
+        }
+    }
+}
