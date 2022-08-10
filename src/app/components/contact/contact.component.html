@@ -10,11 +10,13 @@
             <div class="contact__form-container" *ngIf="!messageError && !messageSuccess">
                 <div class="contact__message">Do you have any message for me? Feel free to write me.</div>
                 <form id="contact-form" [formGroup]="contactForm" e (ngSubmit)="submitMessage()">
-                    <input class="contact__input" type="text" formControlName="name" name="name">
-                    <input class="contact__input" type="email" formControlName="email" name="email">
-                    <textarea class="contact__text-area" cols="30" rows="5" formControlName="message"
-                        name="message"></textarea>
-                    <button class="contact__button" type="submit" [disabled]="contactForm.invalid">Send</button>
+                    <input placeholder="Enter your name" class="contact__input" type="text" formControlName="name"
+                        name="name">
+                    <input placeholder="Enter your valid name email" class="contact__input" type="email"
+                        formControlName="email" name="email">
+                    <textarea placeholder="Enter your message" class="contact__text-area" cols="30" rows="5"
+                        formControlName="message" name="message"></textarea>
+                    <button class="contact__button" type="submit" [disabled]="!contactForm.valid">Send</button>
                 </form>
             </div>
             <div class="contact__message-sent" *ngIf="messageSuccess">

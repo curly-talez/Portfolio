@@ -1,13 +1,14 @@
 $bgColor: #b8c79f;
 $innerBgColor: #798a5d;
-$textColor: #fff;
+$borderColor: #fff;
+$textColor: #253012;
 
 .contact {
     &__container {
         background-color: $bgColor;
         height: 100vh;
         display: flex;
-        color: $textColor;
+        color: $borderColor;
     }
 
     &__inner-container {
@@ -56,7 +57,7 @@ $textColor: #fff;
         width: 100%;
         border: $textColor 1px solid;
         margin-bottom: 10px;
-        background-color: $innerBgColor;
+        background-color: $bgColor;
         padding: 8px 12px;
         color: $textColor;
         outline: none;
@@ -65,7 +66,7 @@ $textColor: #fff;
 
     &__text-area {
         width: 100%;
-        background-color: $innerBgColor;
+        background-color: $bgColor;
         border: $textColor 1px solid;
         padding: 8px 12px;
         color: $textColor;
@@ -77,9 +78,13 @@ $textColor: #fff;
         width: 100%;
         border-radius: 5px;
         background-color: $textColor;
-        color: $innerBgColor;
+        color: $borderColor;
         height: 35px;
-        cursor: pointer;
+    }
+
+    &__button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
     }
 
     &__message-sent,
