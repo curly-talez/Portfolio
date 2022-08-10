@@ -1,32 +1,101 @@
 <div class="contact__container">
-    <div class="contact__inner-container">
-        <div class="contact__text-container">
-            <div class="contact__stay-connected">Let's Stay Connected!</div>
-            <div class="contact__icon-container">
-                <a><img class="contact__icon" src="../../../assets/images/gmail.svg" alt="gmail"></a>
-                <a><img class="contact__icon contact__icon-not-email" src="../../../assets/images/linkedin.svg"
-                        alt="linkedin"></a>
-                <a><img class="contact__icon contact__icon-not-email" src="../../../assets/images/github.svg"
-                        alt="github"></a>
-            </div>
-            <div class="contact__form-container" *ngIf="!messageError && !messageSuccess">
-                <div class="contact__message">Do you have any message for me? Feel free to write me.</div>
-                <form id="contact-form" [formGroup]="contactForm" e (ngSubmit)="submitMessage()">
-                    <input placeholder="Enter your name" class="contact__input" type="text" formControlName="name"
-                        name="name">
-                    <input placeholder="Enter your email" class="contact__input" type="email" formControlName="email"
-                        name="email">
-                    <textarea placeholder="Enter your message" class="contact__text-area" cols="30" rows="5"
-                        formControlName="message" name="message"></textarea>
-                    <button class="contact__button" type="submit" [disabled]="!contactForm.valid">Send</button>
-                </form>
-            </div>
-            <div class="contact__message-sent" *ngIf="messageSuccess">
-                <div>Hey, I got your valuable message. Thanks, pal.</div>
-            </div>
-            <div class="contact__message-error" *ngIf="messageError">
-                Oops! Something went wrong.
-            </div>
+  <div class="contact__inner-container">
+    <div class="contact__text-container">
+      <div class="contact__stay-connected">Let's Stay Connected!</div>
+      <div class="contact__icon-container">
+        <a>
+          <img
+            class="contact__icon"
+            src="../../../assets/images/gmail.svg"
+            alt="gmail"
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/krishnavenips/" target="_blank">
+          <img
+            class="contact__icon contact__icon-not-email"
+            src="../../../assets/images/linkedin.svg"
+            alt="linkedin"
+          />
+        </a>
+        <a href="https://github.com/curly-talez" target="_blank">
+          <img
+            class="contact__icon contact__icon-not-email"
+            src="../../../assets/images/github.svg"
+            alt="github"
+          />
+        </a>
+      </div>
+      <div
+        class="contact__form-container"
+        *ngIf="!messageError && !messageSuccess && !showLoader"
+      >
+        <div class="contact__message">
+          Do you have any message for me? Feel free to write me.
         </div>
+        <form
+          id="contact-form"
+          [formGroup]="contactForm"
+          (ngSubmit)="submitMessage()"
+        >
+          <div class="contact__warning">
+            <span *ngIf="form.name.touched && form.name.invalid"
+              >*Please enter atleast 3 characters</span
+            >
+          </div>
+          <input
+            placeholder="Enter your name"
+            class="contact__input"
+            type="text"
+            formControlName="name"
+            name="name"
+          />
+          <div class="contact__warning">
+            <span *ngIf="form.email.touched && form.email.invalid"
+              >*Please enter a valid email</span
+            >
+          </div>
+          <input
+            placeholder="Enter your email"
+            class="contact__input"
+            type="email"
+            formControlName="email"
+            name="email"
+          />
+          <div class="contact__warning">
+            <span *ngIf="form.message.touched && form.message.invalid"
+              >*Please add atleast 5 characters and atmost 50 characters</span
+            >
+          </div>
+          <textarea
+            placeholder="Enter your message"
+            class="contact__text-area"
+            cols="30"
+            rows="5"
+            formControlName="message"
+            name="message"
+          ></textarea>
+          <button
+            class="contact__button"
+            type="submit"
+            [disabled]="!contactForm.valid"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+      <div *ngIf="showLoader" class="contact__loader">
+        <img
+          class="contact__loader__img"
+          src="../../../assets/images/green_style.gif"
+          alt=""
+        />
+      </div>
+      <div class="contact__message-sent" *ngIf="messageSuccess && !showLoader">
+        <div>Hey, I got your valuable message. Thanks, pal.</div>
+      </div>
+      <div class="contact__message-error" *ngIf="messageError && !showLoader">
+        Oops! Something went wrong.
+      </div>
     </div>
+  </div>
 </div>
