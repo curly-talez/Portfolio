@@ -14,8 +14,8 @@
                 <form id="contact-form" [formGroup]="contactForm" e (ngSubmit)="submitMessage()">
                     <input placeholder="Enter your name" class="contact__input" type="text" formControlName="name"
                         name="name">
-                    <input placeholder="Enter your valid name email" class="contact__input" type="email"
-                        formControlName="email" name="email">
+                    <input placeholder="Enter your email" class="contact__input" type="email" formControlName="email"
+                        name="email">
                     <textarea placeholder="Enter your message" class="contact__text-area" cols="30" rows="5"
                         formControlName="message" name="message"></textarea>
                     <button class="contact__button" type="submit" [disabled]="!contactForm.valid">Send</button>

@@ -7,7 +7,6 @@ $inputBgColor: #cfdeb6;
 .contact {
     &__container {
         background-color: $bgColor;
-        height: 100vh;
         display: flex;
         color: $borderColor;
     }
@@ -15,7 +14,7 @@ $inputBgColor: #cfdeb6;
     &__inner-container {
         width: 75%;
         background-color: $bgColor;
-        margin: auto;
+        margin: 10% auto
     }
 
     &__text-container {
